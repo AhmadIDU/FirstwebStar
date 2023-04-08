@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+header{
+    position: fixed;
+    background: rgba(14, 14, 14, 0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    transition: .6s ease;
+}
+header .navigation{
+    position: relative;
+}
+header .navigation a{
+    color: rgb(240, 240, 247);
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;    
+    transition: .5 ease;
+}
+header .navigation a:hover{
+    color: rgb(90, 55, 203);
+}
+#header.sticky{
+    background-color:none;
+    box-shadow: 0 0px 15px  black;
+}
+#header.sticky .navigation a{
+    color: rgb(226, 225, 234);
+}
+#header.sticky .navigation a:hover{
+    color: rgb(34, 21, 173);
+}
+#header.sticky .navbar-brand{
+    color: #d2d2e7;
+}
+#header.sticky .navbar-brand span{
+    color: rgb(239, 246, 240);
+}
+.navbar-brand{
+    font-size: 35px;  
+    color: rgb(235, 29, 29);
+}
+.navbar-brand>span{
+    color: rgb(255, 0, 76);
+}
+ section{
+    padding: 100px;
+}
+
+.main{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../images/sunset1920x1200_6.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.main .content{
+    max-width: 800px;
+}
+.main .content h2{
+    color: rgb(14, 124, 16);
+    font-size: 36px;
+    font-weight: 500;
+}
+.main .content h2 span{
+    font-size: 60px;
+    font-weight: 600;
+}
+.animated-text{
+    height: 75px;
+    overflow: hidden;
+    position: relative;
+}
+.animated-text h3{
+    color: crimson;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 1px;
+}
+.animated-text h3:nth-child(1){
+    animation: text-move 10s infinite;
+    
+}
+@keyframes text-move{
+    0%{
+        margin-top: 0;
+    }
+    25%{
+        margin-top: -70px;
+    }
+    75%{
+        margin-top: -140px;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+.btn{
+    color: rgb(250, 249, 255);
+    background-color: crimson;
+    font-size: 17px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    border-radius: 2px;
+    margin: 150px 0;
+    transition: 0.001 ease;
+}
+.btn:hover{
+    background-color: rgb(219, 222, 38);
+    color: black;
+}
+.media-icons a{
+    color: rgb(201, 230, 14);
+    font-size: 25px;
+    margin-right: 30px;
+    
+}
+
+@media (max-width: 1049px) {
+    header{
+        padding: 12px 20px;
+    }
+    .navigation{
+        display: none;
+    }
+    .navigation.active{
+        z-index: 888;
+        position: fixed;
+        background: rgb(81, 80, 80);
+        top: 0;
+        right: 0;
+        width: 380px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+        transition: .0s ease;
+    }
+    .navigation a{
+        font-size: 22px;
+        margin: 10px;
+        padding: 0 20px;
+        border-radius: 20px;
+    }
+    .navigation a:hover{
+        background: crimson;
+        color: rgb(27, 3, 3);
+    }
+    .menu-btn{
+        position: absolute;
+        background: url(../images/hamburger.png) no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        right: 0;
+        margin: 0 20px;
+        cursor: pointer;
+        transition: .5s ease;
+    }
+    .menu-btn.active{
+        z-index: 999;
+        background: url(../images/x.png) no-repeat;
+        background-size: 30px;
+        background-position: center;
+        transition: .5s ease;
+        filter: invert(0);
+    }
+    .main{
+        padding: 90px 50px;
+    }
+}
